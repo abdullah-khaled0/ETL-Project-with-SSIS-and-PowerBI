@@ -1,0 +1,2197 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/26/2024 3:23:26 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ABDULLAH"
+  DTS:CreatorName="ABDULLAH\khale"
+  DTS:DTSID="{C4C8167E-72DD-43BC-ABF2-65588F4BF680}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="3073"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="195"
+  DTS:VersionGUID="{0FB6FCEE-F288-4F9F-BFB3-1246ED3D00FD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Abdullah\SQLEXPRESS.SourceDatabase]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{01E538FC-0AB5-446A-978D-5956559A7C92}"
+      DTS:ObjectName="Abdullah\SQLEXPRESS.SourceDatabase">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=Abdullah\SQLEXPRESS;Initial Catalog=SourceDatabase;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{01E538FC-0AB5-446A-978D-5956559A7C92}Abdullah\SQLEXPRESS.SourceDatabase;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Abdullah\SQLEXPRESS.TargetDatabase]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+      DTS:ObjectName="Abdullah\SQLEXPRESS.TargetDatabase">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=Abdullah\SQLEXPRESS;Initial Catalog=TargetDatabase;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}Abdullah\SQLEXPRESS.TargetDatabase;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5FF04782-6AF3-4FA9-A5EB-92F5D441240C}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3073"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1256"
+          DTS:ConnectionString="E:\Projects\SSIS\Customer_Churn_Solution\Customers.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="customerID"
+              DTS:DTSID="{87FCE761-1B71-4459-8DF1-4EBBC5911316}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gender"
+              DTS:DTSID="{5EDEFBBC-C041-4E1F-B015-7FC5BA8D7EFC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeniorCitizen"
+              DTS:DTSID="{9D1F41F4-4800-42C6-8D6F-292F5EC2E03C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Partner"
+              DTS:DTSID="{32BA37BD-7354-4A85-950A-543924BDD3AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dependents"
+              DTS:DTSID="{ED8B88DE-04F7-4271-8F8E-A9A81E0A822B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tenure"
+              DTS:DTSID="{AC6E7638-474A-4945-890C-8AB66A91ACD1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PhoneService"
+              DTS:DTSID="{E8C7E2E3-15E3-4259-9CA8-93A09043DCC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MultipleLines"
+              DTS:DTSID="{D0AAED79-80F9-43E8-85DC-C859486F92D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="InternetService"
+              DTS:DTSID="{AFD5A01B-A443-48D8-A67D-0C221D3B06B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OnlineSecurity"
+              DTS:DTSID="{7834E798-A9F4-4C45-84F1-86526B8E2768}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OnlineBackup"
+              DTS:DTSID="{F6309DB8-34FD-48C3-A573-F4B9324F88BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DeviceProtection"
+              DTS:DTSID="{2722E2B0-FBA8-45C6-AC1F-DDC09C5A9694}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TechSupport"
+              DTS:DTSID="{C4A05017-6FF0-4865-B10C-CF2DA8D758E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StreamingTV"
+              DTS:DTSID="{04FD25B1-D983-48EF-9314-919A60F6AA56}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StreamingMovies"
+              DTS:DTSID="{C5C5A55E-70EE-44DB-8E85-1DA76FBB6335}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contract"
+              DTS:DTSID="{EEEA57B0-338B-4951-9548-0BBE44782AFB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PaperlessBilling"
+              DTS:DTSID="{4120EAB8-D828-4311-9389-6A278C69EF8B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PaymentMethod"
+              DTS:DTSID="{67735303-C612-44C8-90C2-4B047736232A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MonthlyCharges"
+              DTS:DTSID="{082BE8ED-5EC0-44FB-A0B6-FF7AE7602ACD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalCharges"
+              DTS:DTSID="{44452F5D-2679-44E0-96C7-B5E6DE7E3DA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Churn"
+              DTS:DTSID="{5D221BCE-EFA9-4949-A40B-1C628CE26A57}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager Updated]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F27524D9-B046-4F45-B791-ABA9A64A4659}"
+      DTS:ObjectName="Flat File Connection Manager Updated">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3073"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1256"
+          DTS:ConnectionString="E:\Projects\SSIS\Customer_Churn_Solution\New_Customers.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="customerID"
+              DTS:DTSID="{52D2D7AD-B07F-459C-B5C3-E1831CBC6D9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gender"
+              DTS:DTSID="{53ABF297-699B-4F71-AD14-58ACB728FE72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SeniorCitizen"
+              DTS:DTSID="{7A5B15F2-41DF-44DC-B0FB-5D148978DA86}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Partner"
+              DTS:DTSID="{3C6FC0FA-9574-4A77-A275-D400ED6AEDE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dependents"
+              DTS:DTSID="{BAE9EF11-31A1-45C1-8710-BD4C9EF6FF8C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tenure"
+              DTS:DTSID="{49A68F95-4375-4148-92FE-8A954908664B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PhoneService"
+              DTS:DTSID="{78398E08-7D82-43CF-9BC7-61E5B3E827E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MultipleLines"
+              DTS:DTSID="{BBA28C8C-E1DB-4B3E-9957-A985C5C9D32D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="InternetService"
+              DTS:DTSID="{9F7FF528-76BD-4601-AFF1-6408A171D8DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OnlineSecurity"
+              DTS:DTSID="{4AC34C5E-417E-4DE0-964B-C44CC874A8E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OnlineBackup"
+              DTS:DTSID="{CFBAF299-EB81-4A1F-A1C6-28780F9213CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DeviceProtection"
+              DTS:DTSID="{A16894D1-FB0F-4C3F-AE88-D98DA1FAFD3B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TechSupport"
+              DTS:DTSID="{6EFC4841-0951-41F0-B8DF-FEBF3BD01F5F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StreamingTV"
+              DTS:DTSID="{25BC9545-79E0-4D44-A12A-ABBF213F06B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StreamingMovies"
+              DTS:DTSID="{D902E4EF-8D1A-4F22-A98C-6FD80749FF3E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contract"
+              DTS:DTSID="{B437DB54-74B5-4700-A70F-76740AD40972}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PaperlessBilling"
+              DTS:DTSID="{F3F30012-B4C3-4572-9BC3-A2CBBEBE9B7E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PaymentMethod"
+              DTS:DTSID="{712128E6-C437-4457-8A38-F98DC13CCA27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MonthlyCharges"
+              DTS:DTSID="{E570A534-C955-4174-9B6F-14FEC05822B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalCharges"
+              DTS:DTSID="{816F3392-5689-4549-87B1-F3F4F42E909F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Churn"
+              DTS:DTSID="{963FF2C4-8939-4208-B543-2F370CBA9865}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insert Data into DimCustomer"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{32BB10B4-5937-4B70-870B-EC564360A54A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert Data into DimCustomer"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="DELETE FROM DimCustomer;&#xA;-- Insert data into DimCustomer table&#xA;INSERT INTO TargetDatabase.dbo.DimCustomer (CustomerID, Gender, SeniorCitizen, Partner, Dependents)&#xA;SELECT customerID, Gender, SeniorCitizen, Partner, Dependents&#xA;FROM SourceDatabase.dbo.Customers;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert Data into FactTable"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{afd39337-d4e2-49f8-8834-92b8cc4d026c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert Data into FactTable"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="DELETE FROM FactCustomerInteraction;&#xA;-- Insert data into FactCustomerInteraction table&#xA;INSERT INTO TargetDatabase.dbo.FactCustomerInteraction (CustomerID, Tenure, MonthlyCharges, TotalCharges, Churn, InternetServiceID, ContractID, PaymentMethodID)&#xA;SELECT&#xA;    sc.customerID,&#xA;    TRY_CONVERT(INT, sc.tenure) AS Tenure,&#xA;    TRY_CONVERT(DECIMAL(10, 2), sc.MonthlyCharges) AS MonthlyCharges,&#xA;    TRY_CONVERT(DECIMAL(10, 2), sc.TotalCharges) AS TotalCharges,&#xA;    sc.Churn,&#xA;    di.InternetServiceID,&#xA;    dc.ContractID,&#xA;    dpm.PaymentMethodID&#xA;FROM&#xA;    SourceDatabase.dbo.Customers sc&#xA;    JOIN TargetDatabase.dbo.DimInternetService di ON sc.InternetService = di.InternetService&#xA;    JOIN TargetDatabase.dbo.DimContract dc ON sc.Contract = dc.Contract&#xA;    JOIN TargetDatabase.dbo.DimPaymentMethod dpm ON sc.PaymentMethod = dpm.PaymentMethod" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Raw Data to ScrDB"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E12C71F8-EA8D-4C2B-B715-1910C1ADB24A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Raw Data to ScrDB"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Raw Data to ScrDB\cust file (all data)"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="3073"
+              name="cust file (all data)"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Raw Data to ScrDB\cust file (all data).Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[customerID]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[customerID]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[customerID]"
+                      name="customerID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[gender]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[gender]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[SeniorCitizen]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[SeniorCitizen]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[SeniorCitizen]"
+                      name="SeniorCitizen"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Partner]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[Partner]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Partner]"
+                      name="Partner"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Dependents]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[Dependents]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Dependents]"
+                      name="Dependents"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[tenure]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[tenure]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[tenure]"
+                      name="tenure"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[InternetService]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[InternetService]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[InternetService]"
+                      name="InternetService"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Contract]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[Contract]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Contract]"
+                      name="Contract"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[PaymentMethod]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[PaymentMethod]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[PaymentMethod]"
+                      name="PaymentMethod"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[MonthlyCharges]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[MonthlyCharges]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[MonthlyCharges]"
+                      name="MonthlyCharges"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[TotalCharges]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[TotalCharges]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[TotalCharges]"
+                      name="TotalCharges"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Churn]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[Churn]"
+                      length="50"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Churn]"
+                      name="Churn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[customerID]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="customerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[gender]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[SeniorCitizen]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="SeniorCitizen" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[Partner]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Partner" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[Dependents]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Dependents" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[tenure]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="tenure" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[PhoneService]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="PhoneService" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[MultipleLines]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="MultipleLines" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[InternetService]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="InternetService" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[OnlineSecurity]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="OnlineSecurity" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[OnlineBackup]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="OnlineBackup" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[DeviceProtection]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="DeviceProtection" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[TechSupport]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="TechSupport" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[StreamingTV]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="StreamingTV" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[StreamingMovies]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="StreamingMovies" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[Contract]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Contract" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[PaperlessBilling]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="PaperlessBilling" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[PaymentMethod]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="PaymentMethod" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[MonthlyCharges]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="MonthlyCharges" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[TotalCharges]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="TotalCharges" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].ExternalColumns[Churn]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Churn" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1256"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Raw Data to ScrDB\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Raw Data to ScrDB\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\Data Conversion.Inputs[Data Conversion Input].Columns[tenure]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tenure"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[tenure]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Raw Data to ScrDB\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Raw Data to ScrDB\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\Data Conversion.Outputs[Data Conversion Output].Columns[tenure]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Raw Data to ScrDB\Data Conversion.Outputs[Data Conversion Output].Columns[tenure]"
+                      name="tenure"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[tenure]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Raw Data to ScrDB\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Raw Data to ScrDB\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Data to ScrDB\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Data to ScrDB\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Raw Data to ScrDB\load to DB (Customers)"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="load to DB (Customers)"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Customers]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1256</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Abdullah\SQLEXPRESS.SourceDatabase]"
+                  connectionManagerRefId="Package.ConnectionManagers[Abdullah\SQLEXPRESS.SourceDatabase]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[SeniorCitizen]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SeniorCitizen"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[SeniorCitizen]"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[SeniorCitizen]" />
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[Partner]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Partner"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[Partner]"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Partner]" />
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[Dependents]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Dependents"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[Dependents]"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Dependents]" />
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[InternetService]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="InternetService"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[InternetService]"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[InternetService]" />
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[Contract]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Contract"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[Contract]"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Contract]" />
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[PaymentMethod]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PaymentMethod"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[PaymentMethod]"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[PaymentMethod]" />
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[MonthlyCharges]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MonthlyCharges"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[MonthlyCharges]"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[MonthlyCharges]" />
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[Churn]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Churn"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[Churn]"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[Churn]" />
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[gender]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="gender"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[gender]" />
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[customerID]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="customerID"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[customerID]"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[customerID]" />
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[TotalCharges]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TotalCharges"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[TotalCharges]"
+                      lineageId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output].Columns[TotalCharges]" />
+                    <inputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].Columns[tenure]"
+                      cachedDataType="i4"
+                      cachedName="tenure"
+                      externalMetadataColumnId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[tenure]"
+                      lineageId="Package\Load Raw Data to ScrDB\Data Conversion.Outputs[Data Conversion Output].Columns[tenure]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[SeniorCitizen]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="SeniorCitizen" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[Partner]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Partner" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[Dependents]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Dependents" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[InternetService]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="InternetService" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[Contract]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Contract" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[PaymentMethod]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="PaymentMethod" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[MonthlyCharges]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="MonthlyCharges" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[TotalCharges]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="TotalCharges" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[Churn]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="Churn" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[customerID]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="customerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input].ExternalColumns[tenure]"
+                      codePage="1256"
+                      dataType="str"
+                      length="50"
+                      name="tenure" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Data to ScrDB\load to DB (Customers).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Raw Data to ScrDB\load to DB (Customers).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Raw Data to ScrDB\load to DB (Customers).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Raw Data to ScrDB.Paths[Data Conversion Output]"
+              endId="Package\Load Raw Data to ScrDB\load to DB (Customers).Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Raw Data to ScrDB\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Raw Data to ScrDB.Paths[Flat File Source Output]"
+              endId="Package\Load Raw Data to ScrDB\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Raw Data to ScrDB\cust file (all data).Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_Avg_Customer_Lifetime_Duration"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{f4666596-5655-4d93-9a80-c8e311785631}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_Avg_Customer_Lifetime_Duration"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_Avg_Customer_Lifetime_Duration AS&#xA;SELECT &#xA;    AVG(Tenure) AS Avg_Customer_Lifetime_Duration&#xA;FROM &#xA;    FactCustomerInteraction;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_Avg_Monthly_Charges"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8aea4aa9-928d-4ae4-bd49-3f29b40f2da7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_Avg_Monthly_Charges"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_Avg_Monthly_Charges AS&#xA;SELECT &#xA;    AVG(MonthlyCharges) AS Avg_Monthly_Charges&#xA;FROM &#xA;    FactCustomerInteraction;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_Avg_Monthly_Charges_By_Contract"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8f4edc19-1c74-4c4c-9006-fd0a696863ba}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_Avg_Monthly_Charges_By_Contract"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_Avg_Monthly_Charges_By_Contract AS&#xA;SELECT &#xA;    dc.Contract,&#xA;    AVG(fci.MonthlyCharges) AS Avg_Monthly_Charges&#xA;FROM &#xA;    FactCustomerInteraction fci&#xA;JOIN &#xA;    DimContract dc ON fci.ContractID = dc.ContractID&#xA;GROUP BY &#xA;    dc.Contract;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_Avg_Tenure_By_Payment_Method"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d3be24a4-a07f-4e68-bbef-5dd0f8265d00}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_Avg_Tenure_By_Payment_Method"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_Avg_Tenure_By_Payment_Method AS&#xA;SELECT &#xA;    dp.PaymentMethod,&#xA;    AVG(fci.Tenure) AS Avg_Tenure&#xA;FROM &#xA;    FactCustomerInteraction fci&#xA;JOIN &#xA;    DimPaymentMethod dp ON fci.PaymentMethodID = dp.PaymentMethodID&#xA;GROUP BY &#xA;    dp.PaymentMethod;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_Churn_Rate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{b6839561-1b35-4529-9b96-2288fceca28f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_Churn_Rate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_Churn_Rate AS&#xA;SELECT &#xA;    AVG(CASE WHEN Churn = 'Yes' THEN 1.0 ELSE 0.0 END) AS Churn_Rate&#xA;FROM &#xA;    FactCustomerInteraction;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_Churn_Status_Distribution"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{77b40d93-8166-4b6c-a74f-2b248469d07f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_Churn_Status_Distribution"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_Churn_Status_Distribution AS&#xA;SELECT &#xA;    fci.Churn,&#xA;    COUNT(*) AS Total_Customers,&#xA;    (COUNT(*) * 1.0 / (SELECT COUNT(*) FROM FactCustomerInteraction)) * 100 AS Percentage&#xA;FROM &#xA;    FactCustomerInteraction fci&#xA;GROUP BY &#xA;    fci.Churn;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_CLV_By_Payment_Method"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{921cb96d-8366-4415-8f92-c376717f1fd6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_CLV_By_Payment_Method"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_CLV_By_Payment_Method AS&#xA;SELECT &#xA;    dp.PaymentMethod,&#xA;    AVG(fci.TotalCharges) AS CLV&#xA;FROM &#xA;    FactCustomerInteraction fci&#xA;JOIN &#xA;    DimPaymentMethod dp ON fci.PaymentMethodID = dp.PaymentMethodID&#xA;GROUP BY &#xA;    dp.PaymentMethod;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_CLV_By_Tenure"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{a21ac595-8bd4-4e06-a0e3-8bf1b5bb7287}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_CLV_By_Tenure"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_CLV_By_Tenure AS&#xA;SELECT &#xA;    CASE&#xA;        WHEN fci.Tenure &lt;= 12 THEN '0-12 months'&#xA;        WHEN fci.Tenure &lt;= 24 THEN '13-24 months'&#xA;        WHEN fci.Tenure &lt;= 36 THEN '25-36 months'&#xA;        ELSE 'Over 36 months'&#xA;    END AS Tenure_Range,&#xA;    AVG(fci.TotalCharges) AS Avg_CLV&#xA;FROM &#xA;    FactCustomerInteraction fci&#xA;GROUP BY &#xA;    CASE&#xA;        WHEN fci.Tenure &lt;= 12 THEN '0-12 months'&#xA;        WHEN fci.Tenure &lt;= 24 THEN '13-24 months'&#xA;        WHEN fci.Tenure &lt;= 36 THEN '25-36 months'&#xA;        ELSE 'Over 36 months'&#xA;    END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_Contract_Type_Distribution"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c8b65671-bb9d-4e36-8da1-02c9c062581a}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_Contract_Type_Distribution"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_Contract_Type_Distribution AS&#xA;SELECT &#xA;    c.Contract,&#xA;    COUNT(*) AS Total_Customers,&#xA;    (COUNT(*) * 1.0 / (SELECT COUNT(*) FROM FactCustomerInteraction)) * 100 AS Percentage&#xA;FROM &#xA;    FactCustomerInteraction fci&#xA;JOIN &#xA;    DimContract c ON fci.ContractID = c.ContractID&#xA;GROUP BY &#xA;    c.Contract;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_Gender_Distribution"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{61000a4b-017c-41b0-a168-8804b0a54a93}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_Gender_Distribution"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_Gender_Distribution AS&#xA;SELECT &#xA;    Gender,&#xA;    COUNT(*) AS Total_Customers,&#xA;    (COUNT(*) * 1.0 / (SELECT COUNT(*) FROM DimCustomer)) * 100 AS Percentage&#xA;FROM &#xA;    DimCustomer&#xA;GROUP BY &#xA;    Gender;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_Internet_Service_Distribution"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{b0d5cc29-8862-4307-97d0-5945ba0c83a4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_Internet_Service_Distribution"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_Internet_Service_Distribution AS&#xA;SELECT &#xA;    is_.InternetService,&#xA;    COUNT(*) AS Total_Customers,&#xA;    (COUNT(*) * 1.0 / (SELECT COUNT(*) FROM FactCustomerInteraction)) * 100 AS Percentage&#xA;FROM &#xA;    FactCustomerInteraction fci&#xA;JOIN&#xA;    DimInternetService is_ ON fci.InternetServiceID = is_.InternetServiceID&#xA;GROUP BY &#xA;    is_.InternetService;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_Payment_Method_Distribution"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{f9aacd81-886b-4ccf-b8a0-20f23adaa171}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_Payment_Method_Distribution"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_Payment_Method_Distribution AS&#xA;SELECT &#xA;    pm.PaymentMethod,&#xA;    COUNT(*) AS Total_Customers,&#xA;    (COUNT(*) * 1.0 / (SELECT COUNT(*) FROM FactCustomerInteraction)) * 100 AS Percentage&#xA;FROM &#xA;    FactCustomerInteraction fci&#xA;JOIN &#xA;    DimPaymentMethod pm ON fci.PaymentMethodID = pm.PaymentMethodID&#xA;GROUP BY &#xA;    pm.PaymentMethod;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\vw_Total_Customers"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{054df575-7ee5-4504-b290-2812db24d238}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="vw_Total_Customers"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{16FB6951-EAF9-4BA3-8EC2-67DC3E90415A}"
+          SQLTask:SqlStatementSource="CREATE OR ALTER VIEW vw_Total_Customers AS&#xA;SELECT &#xA;    COUNT(CustomerID) AS Total_Customers&#xA;FROM &#xA;    dbo.FactCustomerInteraction;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7295B1C4-48E1-4440-9EDE-CDE2D7D27CBE}"
+      DTS:From="Package\Load Raw Data to ScrDB"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Insert Data into DimCustomer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{4319BC06-17DE-4B97-8463-E804F40BFC90}"
+      DTS:From="Package\Insert Data into DimCustomer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Insert Data into FactTable" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{D4A30058-77FC-4403-9220-FC5B513354AF}"
+      DTS:From="Package\vw_CLV_By_Tenure"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\vw_Internet_Service_Distribution" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{165AD763-A288-4503-A0CB-3745108CE581}"
+      DTS:From="Package\vw_Internet_Service_Distribution"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\vw_Contract_Type_Distribution" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
+      DTS:CreationName=""
+      DTS:DTSID="{F7618E79-C4B6-4F3C-B2F0-E7F7AA63B800}"
+      DTS:From="Package\vw_Contract_Type_Distribution"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 12"
+      DTS:To="Package\vw_Payment_Method_Distribution" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
+      DTS:CreationName=""
+      DTS:DTSID="{98AADAFF-4F35-4097-AD6D-AA299CEE2C21}"
+      DTS:From="Package\vw_Payment_Method_Distribution"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 13"
+      DTS:To="Package\vw_Churn_Status_Distribution" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{54851875-4F0F-4E73-9A15-9B6C6F99F03B}"
+      DTS:From="Package\Insert Data into FactTable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\vw_Total_Customers" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{5B48EA0A-548D-4B67-A56D-5A85F7DEDF0D}"
+      DTS:From="Package\vw_Total_Customers"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\vw_Gender_Distribution" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{d25f89c7-20fe-46d8-90a1-c862969d253f}"
+      DTS:From="Package\vw_Avg_Tenure_By_Payment_Method"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3 2"
+      DTS:To="Package\vw_CLV_By_Payment_Method" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{4AD41E06-C1AB-4C3A-B161-1D14FAE7821A}"
+      DTS:From="Package\vw_Gender_Distribution"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\vw_Churn_Rate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{80436EB4-9A69-4E21-BFC4-DDE9E19BE002}"
+      DTS:From="Package\vw_Churn_Rate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\vw_Avg_Monthly_Charges_By_Contract" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{2455BC9B-1BF9-484C-91FB-D80AEAD1086B}"
+      DTS:From="Package\vw_Avg_Monthly_Charges_By_Contract"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\vw_Avg_Customer_Lifetime_Duration" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{F409DD34-2895-422F-8268-481B1B1A4D91}"
+      DTS:From="Package\vw_Avg_Customer_Lifetime_Duration"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\vw_Avg_Monthly_Charges" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{D6D31309-416D-4C09-9DE5-B6C099CC3355}"
+      DTS:From="Package\vw_Avg_Monthly_Charges"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\vw_Avg_Tenure_By_Payment_Method" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{32D02A9F-1A13-48C3-8384-E4FA82709713}"
+      DTS:From="Package\vw_CLV_By_Payment_Method"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\vw_CLV_By_Tenure" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Load Raw Data to ScrDB"
+          TopLeft="73.9444444444447,68.3333333333334" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Insert Data into DimCustomer"
+          TopLeft="293.944444444445,69.3333333333334" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Insert Data into FactTable"
+          TopLeft="577.944444444444,70.3333333333334" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="513.944444444444,90.8333333333334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64,0"
+              Start="0,0"
+              End="56.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="268.944444444445,89.8333333333334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25,0"
+              Start="0,0"
+              End="17.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="17.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="229,42"
+          Id="Package\vw_Gender_Distribution"
+          TopLeft="264.5,30.5" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\vw_Total_Customers"
+          TopLeft="539.5,32.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="539.5,52.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-46,0"
+              Start="0,0"
+              End="-38.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-38.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="229,42"
+          Id="Package\vw_Churn_Rate"
+          TopLeft="12.5,30.5" />
+        <NodeLayout
+          Size="238,42"
+          Id="Package\vw_Avg_Customer_Lifetime_Duration"
+          TopLeft="267.5,117.5" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\vw_Avg_Monthly_Charges"
+          TopLeft="538.5,118.5" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\vw_Avg_Monthly_Charges_By_Contract"
+          TopLeft="14.5,118.5" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\vw_CLV_By_Payment_Method"
+          TopLeft="273.5,199.5" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\vw_Avg_Tenure_By_Payment_Method"
+          TopLeft="543.5,198.5" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\vw_CLV_By_Tenure"
+          TopLeft="12.5,199.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3 2]"
+          TopLeft="543.5,220">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-41,0"
+              Start="0,0"
+              End="-33.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-33.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="247,42"
+          Id="Package\vw_Contract_Type_Distribution"
+          TopLeft="258.5,278.5" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\vw_Payment_Method_Distribution"
+          TopLeft="535.5,278.5" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\vw_Internet_Service_Distribution"
+          TopLeft="5.5,279.5" />
+        <NodeLayout
+          Size="266,42"
+          Id="Package\vw_Churn_Status_Distribution"
+          TopLeft="510.5,359.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="264.5,51.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23,0"
+              Start="0,0"
+              End="-15.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-15.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="128,72.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="243.5,139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24,0"
+              Start="0,0"
+              End="16.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="16.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="505.5,139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33,0"
+              Start="0,0"
+              End="25.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="646.5,160.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="273.5,220.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-32,0"
+              Start="0,0"
+              End="-24.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-24.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="123.5,241.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="234.5,300">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24,0"
+              Start="0,0"
+              End="16.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="16.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="505.5,299.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30,0"
+              Start="0,0"
+              End="22.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="22.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="646.75,320.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="Reports"
+          ParentId="Package"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="800,440"
+          Size="800,484"
+          Id="2ef5f551-e0bc-4d90-a51c-f86691d0f601"
+          TopLeft="30.4444444444447,133.833333333333">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\vw_Gender_Distribution</s:String>
+            <s:String>Package\vw_Total_Customers</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 3]</s:String>
+            <s:String>Package\vw_Churn_Rate</s:String>
+            <s:String>Package\vw_Avg_Customer_Lifetime_Duration</s:String>
+            <s:String>Package\vw_Avg_Monthly_Charges</s:String>
+            <s:String>Package\vw_Avg_Monthly_Charges_By_Contract</s:String>
+            <s:String>Package\vw_CLV_By_Payment_Method</s:String>
+            <s:String>Package\vw_Avg_Tenure_By_Payment_Method</s:String>
+            <s:String>Package\vw_CLV_By_Tenure</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 3 2]</s:String>
+            <s:String>Package\vw_Contract_Type_Distribution</s:String>
+            <s:String>Package\vw_Payment_Method_Distribution</s:String>
+            <s:String>Package\vw_Internet_Service_Distribution</s:String>
+            <s:String>Package\vw_Churn_Status_Distribution</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 4]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 5]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 6]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 7]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 8]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 9]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 10]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 11]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 12]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 13]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="674.972222222222,112.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,96.6666666666666"
+              Start="0,0"
+              End="0,89.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,89.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Raw Data to ScrDB">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load Raw Data to ScrDB\Data Conversion"
+          TopLeft="302,163" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Load Raw Data to ScrDB\cust file (all data)"
+          TopLeft="297,70" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Load Raw Data to ScrDB\load to DB (Customers)"
+          TopLeft="286,255" />
+        <EdgeLayout
+          Id="Package\Load Raw Data to ScrDB.Paths[Flat File Source Output]"
+          TopLeft="378.75,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Raw Data to ScrDB.Paths[Data Conversion Output]"
+          TopLeft="380.25,205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Raw Data to ScrDB\load to DB (Customers)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
